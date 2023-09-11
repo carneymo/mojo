@@ -44,7 +44,6 @@ struct Planet:
 
 alias NUM_BODIES = 5
 
-
 fn offset_momentum(inout bodies: StaticTuple[NUM_BODIES, Planet]):
     var p = SIMD[DType.float64, 4]()
 
@@ -56,7 +55,6 @@ fn offset_momentum(inout bodies: StaticTuple[NUM_BODIES, Planet]):
     body.velocity = -p / SOLAR_MASS
 
     bodies[0] = body
-
 
 fn advance(inout bodies: StaticTuple[NUM_BODIES, Planet], dt: Float64):
     @parameter
